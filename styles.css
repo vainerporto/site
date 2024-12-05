@@ -33,7 +33,9 @@ header p {
     padding: 40px 0;
     background-color: white;
 }
-
+.text-item{
+    color: rgb(14, 14, 14);
+}
 .services h2 {
     text-align: center;
     font-size: 2em;
@@ -92,6 +94,8 @@ header p {
     transition: background-color 0.3s;
 }
 
+
+
 .cta .btn:hover {
     background-color: #ddd;
 }
@@ -140,8 +144,208 @@ header p {
 
 /* Rodapé */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: rgba(128, 128, 128, 0.89);
+    color: #ffffff;
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 0;
+}
+@media (max-width: 768px) {
+    /* Geral */
+    body {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    /* Seção de Serviços */
+    .service-list {
+        flex-direction: column; /* Alinha os serviços verticalmente */
+        align-items: center;   /* Centraliza os itens */
+    }
+
+    .service-item {
+        width: 90%; /* Ajusta a largura para caber na tela menor */
+        margin-bottom: 20px;
+    }
+
+    /* Chamada para Ação */
+    .cta h2 {
+        font-size: 1.5em;
+    }
+
+    .cta p {
+        font-size: 1em;
+    }
+
+    /* Formulário de Contato */
+    .contact-form input, 
+    .contact-form textarea {
+        width: 95%; /* Reduz a largura dos campos */
+    }
+
+    .contact-form button {
+        width: 95%; /* Botão ocupa a mesma largura dos campos */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Seção de Serviços */
+    .service-item {
+        font-size: 14px; /* Reduz o tamanho do texto em telas muito pequenas */
+    }
+
+    /* Rodapé */
+    footer p {
+        font-size: 0.9em;
+    }
+}
+/* Animação de expansão ao passar o mouse */
+.service-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza a animação */
+    transform: scale(1); /* Define o tamanho inicial */
+}
+
+.service-item:hover {
+    transform: scale(1.1); /* Expande o elemento em 10% */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave */
+}
+/* Botão de Modo Escuro com Animação */
+.btn-dark-mode {
+    margin-left: 10px;
+    align-items: end;
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Ícone alinhado à direita */
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-dark-mode.dark {
+    justify-content: flex-end; /* Move o ícone para a direita no modo escuro */
+    background-color: #333; /* Fundo escuro */
+    border-color: #fff; /* Borda clara */
+}
+
+/* Ícone dentro do botão */
+#dark-mode-icon {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: #ccc; /* Fundo do ícone */
+    color: #fff;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-dark-mode.dark #dark-mode-icon {
+    background-color: #fff; /* Fundo do ícone no modo escuro */
+    color: #333; /* Cor do ícone no modo escuro */
+    transform: rotate(360deg); /* Gira o ícone ao alternar */
+}
+/* Modo Escuro para o Site */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode header {
+    background-color: #292929;
+    color: #ffffff;
+}
+
+body.dark-mode .services {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .service-item {
+    background-color: #3d3d3d;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+body.dark-mode .text-item{
+    color: #c5c5c5;
+}
+
+body.dark-mode .cta {
+    background-color: #292929;
+    color: #ffffff;
+}
+body.dark-mode .container {
+    background-color: #292929;
+    color: #ffffff;
+}
+body.dark-mode #btn{
+    background-color: white;
+    color: #4CAF50;
+}
+body.dark-mode #contact-form{
+    background-color: #353535;
+}
+body.dark-mode #div-form{
+    background-color: #353535;
+    border-radius: 12px;
+}
+
+body.dark-mode footer {
+    background-color: #333333de;
+    color: white;
+}
+
+/* Botão de Modo Escuro */
+.btn-dark-mode {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha o ícone à esquerda */
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-dark-mode.dark {
+    justify-content: flex-end; /* Move o ícone para a direita */
+    background-color: #333;
+    border-color: #fff;
+}
+
+/* Ícone dentro do botão */
+#dark-mode-icon {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: #fff;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-dark-mode.dark #dark-mode-icon {
+    background-color: #fff;
+    color: #333;
+    transform: rotate(360deg); /* Animação de rotação */
 }

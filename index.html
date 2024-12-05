@@ -17,28 +17,31 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="header-dark">
         <div class="container">
             <h1>Porto Dalla Rosa Engenharia</h1>
             <p>Transformando projetos em realidade</p>
+            <button id="dark-mode-toggle" class="btn-dark-mode">
+                <span id="dark-mode-icon">☀️</span>
+            </button>
         </div>
     </header>
      <!-- Seção de Serviços -->
      <section class="services">
-        <div class="container">
+        <div  >
             <h2>Nossos Serviços</h2>
             <div class="service-list">
                 <div class="service-item">
                     <h3>Consultoria Técnica</h3>
-                    <p>Oferecemos consultoria especializada em projetos de engenharia, garantindo a excelência e segurança em cada etapa.</p>
+                    <p class="text-item">Oferecemos consultoria especializada em projetos de engenharia, garantindo a excelência e segurança em cada etapa.</p>
                 </div>
                 <div class="service-item">
                     <h3>Gestão de Obras</h3>
-                    <p>Gestão eficiente de obras, com foco em prazos, custos e qualidade, assegurando resultados satisfatórios para nossos clientes.</p>
+                    <p class="text-item">Gestão eficiente de obras, com foco em prazos, custos e qualidade, assegurando resultados satisfatórios para nossos clientes.</p>
                 </div>
                 <div class="service-item">
                     <h3>Projetos Personalizados</h3>
-                    <p>Desenvolvemos projetos de engenharia personalizados para atender as necessidades específicas de cada cliente, com inovação e qualidade.</p>
+                    <p class="text-item">Desenvolvemos projetos de engenharia personalizados para atender as necessidades específicas de cada cliente, com inovação e qualidade.</p>
                 </div>
             </div>
         </div>
@@ -54,22 +57,22 @@
     </section>
     <!-- Formulário de Contato -->
     <section id="contact-form" class="contact-form">
-        <div class="container">
+        <div class="container" id="div-form">
             <h2>Preencha o Formulário</h2>
             <form id="contactForm">
                 <input type="text" name="name" id="name" placeholder="Seu nome" required>
                 <input type="email" name="email" id="email" placeholder="Seu e-mail" required>
                 <textarea name="message" id="message" placeholder="Sua mensagem" required></textarea>
-                <button type="submit" class="btn">Enviar Mensagem</button>
+                <button type="submit" class="btn" id="btn">Enviar Mensagem</button>
             </form>
             <!-- Espaço para exibir mensagens de status -->
             <p id="status-message" style="text-align: center; margin-top: 15px; color: #333;"></p>
         </div>
     </section>
-    <footer>
-        <div class="container">
+    <footer class="footer">
+        
             <p>&copy; 2024 Porto Dalla Rosa Engenharia | Todos os direitos reservados.</p>
-        </div>
+      
     </footer>
 
     <!-- Script para Enviar o E-mail -->
@@ -108,6 +111,32 @@
                     });
             });
         });
+            const toggleButton = document.getElementById("dark-mode-toggle");
+            const darkModeIcon = document.getElementById("dark-mode-icon");
+            const body = document.body;
+
+            // Verifica se o modo escuro está ativado no localStorage
+            const isDarkMode = localStorage.getItem("dark-mode") === "true";
+            if (isDarkMode) {
+                body.classList.add("dark-mode");
+                toggleButton.classList.add("dark");
+                darkModeIcon.textContent = "🌙"; // Ícone para o modo claro
+            }
+
+            // Alterna o modo escuro ao clicar no botão
+            toggleButton.addEventListener("click", () => {
+                body.classList.toggle("dark-mode");
+                toggleButton.classList.toggle("dark");
+
+                // Atualiza o ícone e salva o estado no localStorage
+                if (body.classList.contains("dark-mode")) {
+                    darkModeIcon.textContent = "🌙"; // Ícone para modo claro
+                    localStorage.setItem("dark-mode", "true");
+                } else {
+                    darkModeIcon.textContent = "☀️"; // Ícone para modo escuro
+                    localStorage.setItem("dark-mode", "false");
+                }
+            });
     </script>
 </body>
 </html>
