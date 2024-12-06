@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+.botão{
+    align-items: left;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -228,13 +232,13 @@ footer {
     border-radius: 50px;
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Ícone alinhado à direita */
+    justify-content: flex-start; /* Ícone alinhado à direita */
     padding: 0;
     cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.9s ease, border-color 0.9s ease;
 }
 
-.btn-dark-mode.dark {
+.btn-dark-mode .dark {
     justify-content: flex-end; /* Move o ícone para a direita no modo escuro */
     background-color: #333; /* Fundo escuro */
     border-color: #fff; /* Borda clara */
@@ -251,7 +255,7 @@ footer {
     border-radius: 50%;
     background-color: #ccc; /* Fundo do ícone */
     color: #fff;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    transition: transform 0.9s ease, background-color 0.5s ease, color 0.3s ease;
 }
 
 .btn-dark-mode.dark #dark-mode-icon {
@@ -321,7 +325,7 @@ body.dark-mode footer {
     justify-content: flex-start; /* Alinha o ícone à esquerda */
     padding: 0;
     cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.9s ease, border-color 0.9s ease;
 }
 
 .btn-dark-mode.dark {
@@ -341,7 +345,7 @@ body.dark-mode footer {
     border-radius: 50%;
     background-color: #ccc;
     color: #fff;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    transition: transform 0.9s ease, background-color 0.5s ease, color 0.3s ease;
 }
 
 .btn-dark-mode.dark #dark-mode-icon {
