@@ -17,7 +17,7 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: #4CAF50;
+    background-color: #162043;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -72,7 +72,7 @@ header p {
 
 /* Chamada para Ação */
 .cta {
-    background-color: #4CAF50;
+    background-color: #162043;
     color: white;
     text-align: center;
     padding: 40px 0;
@@ -90,7 +90,7 @@ header p {
 
 .cta .btn {
     background-color: #fff;
-    color: #4CAF50;
+    color: #162043;
     padding: 15px 30px;
     text-decoration: none;
     font-size: 1.2em;
@@ -132,7 +132,7 @@ header p {
 }
 
 .contact-form button {
-    background-color: #4CAF50;
+    background-color: #162043;
     color: white;
     padding: 15px 30px;
     border: none;
@@ -148,7 +148,7 @@ header p {
 
 /* Rodapé */
 footer {
-    background-color: rgba(128, 128, 128, 0.89);
+    background-color: #666666;
     color: #ffffff;
     text-align: center;
     padding: 15px 0;
@@ -297,7 +297,7 @@ body.dark-mode .container {
 }
 body.dark-mode #btn{
     background-color: white;
-    color: #4CAF50;
+    color: #162043;
 }
 body.dark-mode #contact-form{
     background-color: #353535;
